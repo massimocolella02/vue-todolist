@@ -18,7 +18,7 @@
             <div class="container text-center">
 
                 <section class="inserimento">
-                    <input type="text" placeholder="Scrivi un todo" v-model="testoInput">
+                    <input type="text" placeholder="Scrivi un todo" v-model="testoInput" v-on:keyup.enter="Invio">
                     <button @click="Invio">Invio</button>
                 </section>
 
@@ -28,7 +28,7 @@
                     :key="i">
                         <span v-if="(element.done == true)" class="text-decoration-line-through">{{element.text}}</span>
                         <span v-else>{{element.text}}</span>
-                        <i class="fa-solid fa-x"></i>
+                        <i class="fa-solid fa-x" @click="removeObject(i)" style="cursor: pointer;"></i>
                     </div>
                 </section>
             </div>

@@ -28,6 +28,9 @@ const { createApp } = Vue
                 done: false
             }
             this.todos.push(this.object)
+        },
+        removeObject(i){
+            this.todos.splice(i , 1)
         }
     }
   }).mount('#app')

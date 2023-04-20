@@ -3,6 +3,8 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        testoInput: '',
+        object: null,
         todos: [
             {
                 text: 'Fare i compiti',
@@ -18,5 +20,14 @@ const { createApp } = Vue
             }
         ]
       }
+    },
+    methods: {
+        Invio(){
+            this.object={
+                text: this.testoInput,
+                done: false
+            }
+            this.todos.push(this.object)
+        }
     }
   }).mount('#app')

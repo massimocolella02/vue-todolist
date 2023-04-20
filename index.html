@@ -18,8 +18,8 @@
             <div class="container text-center">
 
                 <section class="inserimento">
-                    <input type="text" placeholder="Scrivi un todo">
-                    <button>Invio</button>
+                    <input type="text" placeholder="Scrivi un todo" v-model="testoInput">
+                    <button @click="Invio">Invio</button>
                 </section>
 
                 <section class="visualizzazione d-flex justify-content-center my-3 flex-wrap">

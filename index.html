@@ -16,15 +16,18 @@
 
         <main>
             <div class="container text-center">
-                
+
                 <section class="inserimento">
                     <input type="text" placeholder="Scrivi un todo">
                     <button>Invio</button>
                 </section>
 
-                <section class="visualizzazione d-flex justify-content-center my-3">
-                    <div class="todo d-flex justify-content-between align-items-center w-50 p-1 border border-success rounded">
-                        <span>Fare i compiti</span>
+                <section class="visualizzazione d-flex justify-content-center my-3 flex-wrap">
+                    <div class="todo d-flex justify-content-between align-items-center w-75 p-1 my-2 border border-success rounded"
+                    v-for="(element, i) in todos"
+                    :key="i">
+                        <span v-if="(element.done == true)" class="text-decoration-line-through">{{element.text}}</span>
+                        <span v-else>{{element.text}}</span>
                         <i class="fa-solid fa-x"></i>
                     </div>
                 </section>
